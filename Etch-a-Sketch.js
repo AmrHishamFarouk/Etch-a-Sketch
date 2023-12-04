@@ -6,7 +6,19 @@ main.classList.add('main');
 main.setAttribute('style','width:45vw;height: 45vw;margin: 0 auto;background-color: aqua;');
 
 const row = document.createElement('div');
-row.setAttribute('style','margin:0;padding:0;display:flex;width:40px;height:40px;background-color:green;');
+row.className= 'row';
 
-main.appendChild(row)
-main.appendChild(row)
+for(let i=0;i<16;i++){
+    main.appendChild(row.cloneNode(true));
+};
+
+const allrow = document.querySelectorAll('.row')
+
+allrow.forEach(box =>{
+    for(let i=0;i<16;i++){
+        const part =document.createElement('div');
+        part.className = 'part';
+        box.appendChild(part.cloneNode(true));
+    }
+})
+
