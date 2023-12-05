@@ -3,7 +3,8 @@ console.log('zeko');
 const main = document.createElement('div');
 document.body.appendChild(main);
 main.classList.add('main');
-main.setAttribute('style','width:45vw;height: 45vw;margin: 0 auto;background-color: aqua;');
+
+// main.setAttribute('style','width:45vw;height: 45vw;margin: 0 auto;');
 
 const row = document.createElement('div');
 row.className= 'row';
@@ -22,3 +23,10 @@ allrow.forEach(box =>{
     }
 })
 
+const allparts = document.querySelectorAll('.part');
+
+allparts.forEach(part =>{
+    part.addEventListener("mouseover",()=>{
+        part.style.backgroundColor='red';
+    });
+})
