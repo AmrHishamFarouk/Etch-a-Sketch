@@ -14,13 +14,15 @@ body{
 .main{
     width:45vw;
     height: 50vw;
-    margin: 0 auto;
 }
-.part{
-    background-color: white;
-    margin: 0px;
-    width: 100%;
-    border: 1px solid black;
+.columb{
+    display: flex;
+    flex-direction: column;
+    justify-items: stretch;
+    justify-content: stretch;
+    align-content: stretch;
+    height: 100%;
+    background-color: aqua;
 }
 .row{
     margin:0px;
@@ -30,8 +32,15 @@ body{
     justify-content: stretch;
     align-content: stretch;
     min-width: 100%;
-    min-height: 35px;
+    height: 100%;
     background-color:green;
+}
+.part{
+    background-color: white;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
 }
 footer{
     color: white; 

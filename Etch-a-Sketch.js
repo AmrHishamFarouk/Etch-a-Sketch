@@ -1,32 +1,53 @@
 console.log('zeko');
 
-const main = document.createElement('div');
-document.body.appendChild(main);
-main.classList.add('main');
+let size = 16;
+function gridsize(){
+    do{
+        size= parseInt(prompt("enter grid size between 1 and 100:"));
+    }while(size>100 || size<=0);
+    
+    //i putted the main here because it was not seen in this domain
+    let main = document.querySelector('.main')
+    document.body.removeChild(main);
+    mainTask(size);
 
-// main.setAttribute('style','width:45vw;height: 45vw;margin: 0 auto;');
+}
 
-const row = document.createElement('div');
-row.className= 'row';
+mainTask(size);
 
-for(let i=0;i<16;i++){
-    main.appendChild(row.cloneNode(true));
-};
+function mainTask(size){
+    const main = document.createElement('div');
+    document.body.appendChild(main);
+    main.classList.add('main');
 
-const allrow = document.querySelectorAll('.row')
+    const columb = document.createElement('div');
+    columb.className= 'columb'
+    main.appendChild(columb);
 
-allrow.forEach(box =>{
-    for(let i=0;i<16;i++){
-        const part =document.createElement('div');
-        part.className = 'part';
-        box.appendChild(part.cloneNode(true));
-    }
-})
 
-const allparts = document.querySelectorAll('.part');
+    const row = document.createElement('div');
+    row.className= 'row';
 
-allparts.forEach(part =>{
-    part.addEventListener("mouseover",()=>{
-        part.style.backgroundColor='red';
-    });
-})
+    for(let i=0;i<size;i++){
+       columb.appendChild(row.cloneNode(true));
+    };
+
+    const allrow = document.querySelectorAll('.row')
+
+    allrow.forEach(box =>{
+        for(let i=0;i<size;i++){
+            const part =document.createElement('div');
+            part.className = 'part';
+            box.appendChild(part.cloneNode(true));
+        }
+    })
+
+    const allparts = document.querySelectorAll('.part');
+
+    allparts.forEach(part =>{
+        part.addEventListener("mouseover",()=>{
+            part.style.backgroundColor='red';
+        });
+    })
+
+}
