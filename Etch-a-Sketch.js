@@ -3,14 +3,17 @@ console.log('zeko');
 let size = 16;
 function gridsize(){
     do{
-        size= parseInt(prompt("enter grid size between 1 and 100:"));
+        let gridsize =prompt("enter grid size between 1 and 100:");
+        console.log(gridsize)
+        if(gridsize != null &&  gridsize!=''){
+            size= parseInt(gridsize);
+        }
     }while(size>100 || size<=0);
-    
+
     //i putted the main here because it was not seen in this domain
     let main = document.querySelector('.main')
     document.body.removeChild(main);
     mainTask(size);
-
 }
 
 mainTask(size);
